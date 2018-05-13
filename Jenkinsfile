@@ -9,7 +9,7 @@ node('linux') {
     stage ("CreateInstance") {
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'buhr3940', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
             
-            aws ec2 run-instances --image-id ami-467ca739 --count 1 --instance-type t2.micro --key-name classroom --security-group-ids sg-07e05871 --subnet-id subnet-3e3b4563 --region us-east-1
+            aws ec2 run-instances --image-id ami-467ca739 --count 1 --instance-type t2.micro --key-name classroom  --security-group-ids sg-07e05871 --subnet-id subnet-3e3b4563 --region us-east-1
             }
         }
 }
